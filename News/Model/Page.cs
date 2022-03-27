@@ -20,7 +20,7 @@ namespace News.Model
 
         public Page FindPageByWord(string text)
         {
-            return Text.Contains(text) ? this : null;
+            return Text.ToLower().Contains(text.ToLower()) ? this : null;
         }
 
         public IEnumerable<Referent> FindEntities()
