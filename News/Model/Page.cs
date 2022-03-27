@@ -4,7 +4,7 @@ using Pullenti.Ner;
 
 namespace News.Model
 {
-    public class Page
+       internal class Page
     {
         [Key]
         public int ID { get; set; }
