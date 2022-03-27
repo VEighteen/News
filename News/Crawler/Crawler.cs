@@ -13,7 +13,7 @@ namespace News.Crawler
             _url = url;
         }
 
-        public async Task<CrawledPage> GetPageInfo()
+        public async Task<CrawledPage> DownloadPage()
         {
             var pageRequester = new PageRequester(new CrawlConfiguration(), new WebContentExtractor());
 
