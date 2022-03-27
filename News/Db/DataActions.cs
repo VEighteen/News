@@ -1,5 +1,6 @@
 ﻿using News.Model;
 using ServiceStack.OrmLite;
+using News.CrawlerName;
 
 namespace News.Db
 {
@@ -12,8 +13,29 @@ namespace News.Db
             _connection = connection;
         }
 
+        public IEnumerable<Page> SelectAll()
+        {
+            return _connection.getConnection().Select<Page>();
+        }
+
         public void Insert(Page page)
         {
+            _connection.getConnection().Insert(page);
+        }
+
+        public void Insert(string url)
+        {
+            Crawler crawler = new Crawler(url);
+            var res = crawler.DownloadPage().Result;
+
+            Page page = new Page
+            {
+                Html = res.Content.Text,
+                Url = res.Uri.AbsoluteUri,
+                Text = res.AngleSharpHtmlDocument.Body.TextContent,
+                Date = DateTime.Now
+            };
+
             _connection.getConnection().Insert(page);
         }
 

@@ -1,8 +1,7 @@
-﻿
-using Abot2.Core;
+﻿using Abot2.Core;
 using Abot2.Poco;
 
-namespace News.Crawler
+namespace News.CrawlerName
 {
     internal class Crawler
     {
