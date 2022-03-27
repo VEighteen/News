@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Pullenti;
+﻿using Pullenti;
 using Pullenti.Ner;
+using ServiceStack.DataAnnotations;
 
 namespace News.Model
 {
        internal class Page
     {
-        [Key]
+        [AutoIncrement]
         public int ID { get; set; }
 
         public string Html { get; set; } 
