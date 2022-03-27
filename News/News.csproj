@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Abot" Version="2.0.70" />
     <PackageReference Include="Pullenti.Core" Version="4.3.0" />
     <PackageReference Include="ServiceStack.OrmLite.SqlServer.Core" Version="6.0.2" />
