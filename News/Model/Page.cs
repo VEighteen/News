@@ -4,7 +4,7 @@ using ServiceStack.DataAnnotations;
 
 namespace News.Model
 {
-       internal class Page
+       public class Page
     {
         [AutoIncrement]
         public int ID { get; set; }
