@@ -18,11 +18,6 @@ namespace News.Db
             return _connection.getConnection().Select<Page>();
         }
 
-        public void Insert(Page page)
-        {
-            _connection.getConnection().Insert(page);
-        }
-
         public void Insert(string url)
         {
             Crawler crawler = new Crawler(url);
@@ -39,9 +34,9 @@ namespace News.Db
             _connection.getConnection().Insert(page);
         }
 
-        public void Delete(Page page)
+        public void Delete()
         {
-            _connection.getConnection().Delete(page);
+            _connection.getConnection().DeleteAll(typeof(Page)) ;
         }
 
         public void Update(Page page)

@@ -18,9 +18,9 @@ namespace News.Model
         
         public DateTime Date { get; set; }
 
-        public Page FindPageByWord(string text)
+        public bool ContainsWord(string text)
         {
-            return Text.ToLower().Contains(text.ToLower()) ? this : null;
+            return Text.ToLower().Contains(text.ToLower());
         }
 
         public IEnumerable<Referent> FindEntities()
